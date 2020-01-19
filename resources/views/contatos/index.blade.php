@@ -27,7 +27,8 @@
                         Data de Nascimento: {{ $contato->data_nascimento }}<br>
                         Telefone: {{ $contato->telefone }}<br>
                         E-mail: {{ $contato->email }}<br>
-                        <a href="{{ route('contatos.edit', $contato->id)}}">Editar</a>
+                        <a class="btn btn-primary" href="{{ route('contatos.edit', $contato->id)}}">Editar</a>
+                        <a class="btn btn-danger" href="{{ route('contatos.destroy', $contato->id)}}">Excluir</a>
                         <hr>
                     @empty
                         <h3>Você não possui contatos cadastrados</h3>

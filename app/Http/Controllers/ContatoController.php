@@ -121,8 +121,12 @@ class ContatoController extends Controller
      * @param  \App\Contato  $contato
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contato $contato)
+    public function destroy($id)
     {
-        //
+        $contato = Contato::find($id)->delete();
+
+        flash('Contato excluido com sucesso')->success();
+
+        return redirect()->route('contatos.index');
     }
 }
