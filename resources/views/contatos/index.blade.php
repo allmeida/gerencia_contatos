@@ -6,8 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    Lista de Contatos
-                    <a class="btn btn-primary float-right" href="{{ route('contatos.create') }}">Novo Contato</a>
+                    <center><h1>Lista de Contatos</h1></center>
                 </div>
 
                 <div class="card-body">
@@ -19,7 +18,7 @@
 
                     @forelse($contatos as $contato)
                         @if($contato->foto)
-                            <img src="{{ url('images/' . $contato->foto) }}" style="width: 150px" class="img-thumbnail">
+                            <img src="{{ url('images/' . $contato->foto) }}" style="width: 100px" class="img-thumbnail">
                         @endif
                         <br>
                         Nome: {{ $contato->nome }}<br>

@@ -5,7 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Formulário de Contatos</div>
+                <div class="card-header">
+                    <center><h1>Formulário de Contatos</h1></center>
+                </div>
 
                 <div class="card-body">
                     @if(isset($contato))

@@ -21,3 +21,5 @@ Route::middleware('auth')->group(function () {
     Route::resource('contatos', 'ContatoController', ['except' => ['destroy']]);
     Route::get('contatos/{contato}/delete', 'ContatoController@destroy')->name('contatos.destroy');
 });
+
+
