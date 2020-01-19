@@ -18,9 +18,10 @@
                     @endif
 
                     @forelse($contatos as $contato)
-                        @if($contato->foto_contato)
-                            <img src="{{ url('images/' . $contato->foto_contato) }}" style="width: 150px" class="img-thumbnail">
+                        @if($contato->foto)
+                            <img src="{{ url('images/' . $contato->foto) }}" style="width: 150px" class="img-thumbnail">
                         @endif
+                        <br>
                         Nome: {{ $contato->nome }}<br>
                         Cpf: {{ $contato->cpf }}<br>
                         Data de Nascimento: {{ $contato->data_nascimento }}<br>

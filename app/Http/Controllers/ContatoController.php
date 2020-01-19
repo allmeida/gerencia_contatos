@@ -47,19 +47,19 @@ class ContatoController extends Controller
         //     'telefone' => $request->telefone,
         //     'user_id' => $usuario->id
         // ]);
-        if ($request->foto) {
+        if ($request->foto_contato) {
                 $request->validate([
-                    'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                    'foto_contato' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 ]);
 
-                $imageName = time().'.'.$request->foto->getClientOriginalExtension();
-                $request->foto->move(public_path('images'), $imageName);
+                $imageName = time().'.'.$request->foto_contato->getClientOriginalExtension();
+                $request->foto_contato->move(public_path('images'), $imageName);
 
-                $request->merge(['foto_contato' => $imageName]);
+                $request->merge(['foto' => $imageName]);
         }
 
         try {
-            Auth::user()->contatos()->create($request->except(['foto']));
+            Auth::user()->contatos()->create($request->except(['foto_contato']));
             flash('Salvo com sucesso')->success();
         }catch (\Exception $e) {
             flash('Ocorreu um erro ao salvar')->error();
